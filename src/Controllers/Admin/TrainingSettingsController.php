@@ -52,7 +52,7 @@ class TrainingSettingsController
     {
         // Retrieve form data
         $name = $request->input('name');
-        $embed_video = $request->input('embed_video');
+        $embed_video = stripslashes($request->input('embed_video'));
         $anchor = $request->input('anchor');
         $sort = $request->input('sort');
 
@@ -231,7 +231,7 @@ class TrainingSettingsController
     {
         if (isset($_POST['submit'])) {
             $name = $request->input('name');
-            $embed_video = $request->input('embed_video');
+            $embed_video = stripslashes($request->input('embed_video'));
             $anchor = $request->input('anchor');
             $sort = $request->input('sort');
 
